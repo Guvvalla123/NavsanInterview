@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 // auth routes
 const authRoutes = require('./routes/authRoutes');
-app.use('/', authRoutes);
+app.use('/api', authRoutes);
 
 // start server
 app.listen(port, () => {

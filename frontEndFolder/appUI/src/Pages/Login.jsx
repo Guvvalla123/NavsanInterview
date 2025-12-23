@@ -1,6 +1,9 @@
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate, Link } from "react-router-dom"
+import { useEffect } from "react"
+import { isLoggedIn } from "@/utils/auth"
+
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -30,6 +33,14 @@ const Login = () => {
     })
   }
 
+  //useEffect 
+  useEffect(() => {
+    if (isLoggedIn()) {
+      navigate("/")
+    }
+  }, [])
+
+
   // submit handler
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -38,7 +49,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "http://localhost:5000/api/login",
         formData
       )
 
