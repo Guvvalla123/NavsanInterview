@@ -13,15 +13,16 @@ import { Label } from "@/components/ui/label"
 const Login = () => {
   // form state
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+  email: "",
+  oldPassword: "",
+  newPassword: "",
   })
 
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
-  // destructuring
-  const { email, password } = formData
+const { email, oldPassword, newPassword } = formData;
+
 
   const navigate = useNavigate()
 
@@ -109,6 +110,16 @@ const Login = () => {
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Logging in..." : "Login"}
             </Button>
+
+            <p className="text-sm text-center">
+              <Link
+                to="/change-password"
+                className="text-blue-600 hover:underline"
+              >
+                Change Password?
+              </Link>
+            </p>
+
 
             {/* Links */}
             <p className="text-sm text-gray-600 text-center space-x-2">

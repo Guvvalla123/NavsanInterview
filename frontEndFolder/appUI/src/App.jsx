@@ -3,7 +3,7 @@ import Navbar from "./Pages/Navbar"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
-import ProtectedRoute  from "./routes/ProtectedRoute"
+import ProtectedRoute from "./routes/ProtectedRoute"
 
 const App = () => {
   return (
